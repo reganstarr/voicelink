@@ -1,0 +1,23 @@
+{
+    "name": "VoiceLink",
+    "description": "VoiceLink",
+    "version": "1",
+    "permissions": [
+    	"tabs","<all_urls>",
+			"storage",
+			"http://*/"
+    ],
+	  "background": {
+	    "scripts": ["background.js"],
+	    "persistent": false
+	  },
+
+    "content_scripts": [
+        {
+        "matches": [ "*://*/*" ],
+        "js": ["jquery.js", "mousetrap.js", "number-links.js"],
+        "run_at": "document_end"
+        }
+    ], 
+    "manifest_version":2
+}
